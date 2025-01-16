@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binomial Distribution</title>
+<style>
+    body { background-color: #282c34; color: #61dafb; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    h1 { font-size: 24pt; margin-bottom: 20px; }
+    p { font-size: 14pt; margin-bottom: 20px; }
+    input[type="button"], input[type="text"] { color: #282c34; background-color: #61dafb; border: none; padding: 10px; font-size: 16pt; margin: 10px; border-radius: 5px; }
+    input[type="button"]:hover { background-color: #21a1f1; }
+</style>
+<script>
+function fatt(n) { var f = 1; for (n; n > 1; n--) f *= n; return f; }
+function pow(b,e) { var pot=1; for(e;e>0;e--) pot*=b; return(pot); }
+function controllo(inf, sup, cosa) {
+    var val; do { val = prompt("ENTER " + cosa, ""); if ((val < inf) || (val > sup)) alert(cosa + " MUST BE A VALUE >= " + inf + " AND <= " + sup); } while ((val < inf) || (val > sup));
+    return val;
+}
+function principale() {
+    var N = parseInt(controllo(0, 170, "NUMBER OF EXPERIMENTS TO DO")), m = parseInt(controllo(0, N, " TIMES EXPECTED EVENT")), p = parseFloat(controllo(0, 1, " PROBABILITY OF THE EVENT - REAL VALUE"));
+    var tot = (fatt(N) / (fatt(m) * fatt(N - m))) * pow(p, m) * pow(1 - p, N - m);
+    document.getElementById('ris').value = tot*100 + "%";
+}
+</script>
+</head>
+<body>
+<h1>Binomial Distribution</h1>
+<p>The binomial distribution allows you to know the probability that by doing N experiments the expected event will occur M times.</p>
+<p>N= NUMBER of experiments<br>M= times when the event occur <br> P= probability of that event is true (real value between 1 & 0)</p>
+<input type="button" value="START THE SIMULATION" onClick="principale();" />
+PN(m) = <input type="text" id="ris" size="20" readonly />
+</body>
+</html>
