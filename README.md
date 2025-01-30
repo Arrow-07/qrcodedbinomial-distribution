@@ -5,7 +5,9 @@ This project provides a simple web interface to calculate the binomial distribut
 ## Features
 
 - **User-Friendly Interface**: Input parameters such as the probability of success (Z), the number of trials (X), and the desired number of successful outcomes (Y) to compute the probability.
-
+## QRCODE
+-here the code that contain the base64 encoded html:
+![image](https://cloud-h2hg7vkjx-hack-club-bot.vercel.app/0qr_code_base64_html.png)
 ## Usage
 
 1. **Access the Application**: Open the `index.html` file in your preferred web browser.
@@ -26,3 +28,5 @@ If you want to calculate the probability of flipping a fair coin (probability of
 After clicking "Calculate," the application will display the probability.
 
 *Note: This project is intended for educational purposes and may not cover all edge cases or advanced statistical scenarios.*
+
+
